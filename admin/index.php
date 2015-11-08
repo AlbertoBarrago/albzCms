@@ -12,8 +12,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
+                            Welcome to Admin Panel
+                            <small>alBz Style</small>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
