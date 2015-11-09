@@ -1,9 +1,16 @@
-<?php include "includes/header.php"; ?>
+<?php include "includes/admin_header.php"; ?>
+
+<?php
+
+  $query = "SELECT * FROM category";
+  $select_categories = mysqli_query($connection, $query);
+
+?>
 
     <div id="wrapper">
 
       <!-- Nagivation -->
-      <?php include "includes/navigation.php"; ?>
+      <?php include "includes/admin_navigation.php"; ?>
 
         <div id="page-wrapper">
 
@@ -37,14 +44,21 @@
                                 <th>Category Title</th>
                               </tr>
                               <tbody>
-                                <tr>
-                                  <td> id_date </td>
-                                  <td> category_name </td>
-                                </tr>
-                                <tr>
-                                  <td> id_date_2 </td>
-                                  <td> category_name_2 </td>
-                                </tr>
+
+                                  <?php
+
+                                    while($row = mysqli_fetch_assoc($select_categories)) {
+                                      $cat_id = $row['cat_id'];
+                                      $cat_title = $row['cat_title'];
+
+                                      echo "<tr>";  
+                                      echo "<td> {$cat_id} </td>";
+                                      echo "<td> {$cat_title} </td>";
+                                      echo "</tr>";
+                                    }
+
+                                  ?>
+
                               </tbody>
                             </thead>
                           </table>
@@ -61,4 +75,4 @@
         </div>
         <!-- /#page-wrapper -->
 
-    <?php include "includes/footer.php"; ?>
+    <?php include "includes/admin_footer.php"; ?>
