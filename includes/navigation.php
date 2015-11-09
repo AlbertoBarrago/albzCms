@@ -26,6 +26,10 @@
               ?>
 
             </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+             <li><a href="admin">Admin Panel</a></li>
+           </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
