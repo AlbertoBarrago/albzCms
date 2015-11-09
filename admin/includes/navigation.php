@@ -135,11 +135,11 @@
               </li>
 
             <li>
-                <a href="categorie.html"><i class="fa fa-fw fa-edit"></i> Categories</a>
+                <a href="categories.php"><i class="fa fa-fw fa-edit"></i> Categories</a>
             </li>
 
-            <li class="active">
-                <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Comments</a>
+            <li>
+                <a href="#"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
               <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
