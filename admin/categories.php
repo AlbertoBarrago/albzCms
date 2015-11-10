@@ -57,7 +57,7 @@
                               <input class="form-control" type="text" name="cat_title">
                             </div>
                             <div class="form-group">
-                              <input class="btn btn-primary" type="submit" name="submit" value="Update">
+                              <input class="btn btn-primary" type="submit" name="submit" value="Add Category">
                             </div>
                           </form>
 
@@ -90,10 +90,10 @@
                               <?php } ?>
 
 
-                            
+
                             </div>
                             <div class="form-group">
-                              <input class="btn btn-primary" type="submit" name="submit" value="submit">
+                              <input class="btn btn-primary" type="submit" name="submit" value="Update">
                             </div>
                           </form>
                         </div>
