@@ -57,6 +57,42 @@
                               <input class="form-control" type="text" name="cat_title">
                             </div>
                             <div class="form-group">
+                              <input class="btn btn-primary" type="submit" name="submit" value="Update">
+                            </div>
+                          </form>
+
+                          <form action="categories.php" method="post">
+                            <div class="form-group">
+                              <label for="cat_title">Update Category</label>
+
+                              <?php
+
+                               if(isset($_GET['edit'])){
+                                 $cat_id = $_GET['edit'];
+                                 $query = "SELECT * FROM category WHERE cat_id = $cat_id ";
+                                 $edit_categories = mysqli_query($connection,$query);
+
+                                 while($row = mysqli_fetch_assoc($edit_categories)){
+                                   $cat_id = $row['cat_id'];
+                                   $cat_title = $row['cat_title'];
+
+
+                                 }
+
+
+
+
+                              ?>
+
+                              <input value="<?php if(isset($cat_title)){ echo $cat_title; } ?>" type="text" class="form-control" name="cat_title">
+
+
+                              <?php } ?>
+
+
+                            
+                            </div>
+                            <div class="form-group">
                               <input class="btn btn-primary" type="submit" name="submit" value="submit">
                             </div>
                           </form>
@@ -85,6 +121,7 @@
                                       echo "<td> {$cat_id} </td>";
                                       echo "<td> {$cat_title} </td>";
                                       echo "<td><a href='categories.php?delete={$cat_id}'>Delete</a></td>";
+                                      echo "<td><a href='categories.php?edit={$cat_id}'>Update</a></td>";
                                       echo "</tr>";
                                     }
 
