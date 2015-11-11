@@ -97,7 +97,7 @@
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> alBz <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -126,10 +126,10 @@
                   <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
                   <ul id="demo" class="collapse">
                       <li>
-                          <a href="#">Dropdown Item</a>
+                          <a href="posts.php">View All Posts</a>
                       </li>
                       <li>
-                          <a href="#">Dropdown Item</a>
+                          <a href="#">Add Post</a>
                       </li>
                   </ul>
               </li>
