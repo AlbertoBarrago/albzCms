@@ -1,5 +1,15 @@
 <?php
 
+function confirm($result){
+
+  if(!$result) {
+    die("QUERY FAILED" . mysqli_error($connection));
+  }
+
+  return $result;
+
+}
+
 function insert_categories() {
 
   global $connection;
@@ -58,7 +68,7 @@ function findAllCategories() {
 function deleteCategories() {
 
   global $connection;
-  
+
   if(isset($_GET['delete'])){
 
     $the_cat_id = $_GET['delete'];

@@ -129,7 +129,7 @@
                           <a href="posts.php">View All Posts</a>
                       </li>
                       <li>
-                          <a href="#">Add Post</a>
+                          <a href="posts.php?source=add_posts">Add Post</a>
                       </li>
                   </ul>
               </li>
