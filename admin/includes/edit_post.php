@@ -9,7 +9,6 @@
   $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
   $select_posts_by_id = mysqli_query($connection,$query);
 
-
   while($row = mysqli_fetch_assoc($select_posts_by_id)){
 
     $post_id = $row['post_id'];
@@ -84,22 +83,40 @@
   </div>
 
   <div class="form-group">
-      <label for="post_category">Post Category Id</label>
-      <select class="form-control" name="post_category" id="">
-        <?php
-        $query = "SELECT * FROM category";
-        $select_categories = mysqli_query($connection,$query);
+   <label for="categories">Categories</label>
+   <select name="post_category" id="" class="form-control">
+    <?php
 
-        while($row = mysqli_fetch_assoc($select_categories)){
-          $cat_id = $row['cat_id'];
-          $cat_title = $row['cat_title'];
+      $query = "SELECT * FROM category ";
+      $select_categories = mysqli_query($connection,$query);
 
-          echo "<option value='$cat_id'>{$cat_title}</option>";
 
-        }
 
-        ?>
-      </select>
+
+      while($row = mysqli_fetch_assoc($select_categories )) {
+      $cat_id = $row['cat_id'];
+      $cat_title = $row['cat_title'];
+
+      echo "<option value='{$cat_id}'>{$cat_title}</option>";
+
+
+      if($cat_id == $post_category_id) {
+
+      $query = "SELECT * FROM categories WHERE cat_id = '{$post_category_id}' ";
+      $select_specifi_categories = mysqli_query($connection,$query);
+      $cat_id = $row['cat_id'];
+      $cat_title = $row['cat_title'];
+
+      echo "<option selected value='{$cat_id}'>{$cat_title}</option>";
+
+
+      }
+
+      }
+
+    ?>
+   </select>
+
   </div>
 
   <div class="form-group">

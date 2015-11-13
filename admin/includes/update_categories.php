@@ -5,6 +5,7 @@
 
      if(isset($_GET['edit'])){
        $cat_id = $_GET['edit'];
+       
        $query = "SELECT * FROM category WHERE cat_id = $cat_id ";
        $edit_categories = mysqli_query($connection,$query);
 
