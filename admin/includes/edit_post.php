@@ -90,27 +90,23 @@
       $query = "SELECT * FROM category ";
       $select_categories = mysqli_query($connection,$query);
 
-
-
-
       while($row = mysqli_fetch_assoc($select_categories )) {
       $cat_id = $row['cat_id'];
       $cat_title = $row['cat_title'];
 
       echo "<option value='{$cat_id}'>{$cat_title}</option>";
 
-
       if($cat_id == $post_category_id) {
 
-      $query = "SELECT * FROM categories WHERE cat_id = '{$post_category_id}' ";
-      $select_specifi_categories = mysqli_query($connection,$query);
-      $cat_id = $row['cat_id'];
-      $cat_title = $row['cat_title'];
+        $query = "SELECT * FROM categories WHERE cat_id = '{$post_category_id}' ";
+        $select_specifi_categories = mysqli_query($connection,$query);
+        $cat_id = $row['cat_id'];
+        $cat_title = $row['cat_title'];
 
-      echo "<option selected value='{$cat_id}'>{$cat_title}</option>";
+        echo "<option selected value='{$cat_id}'>{$cat_title}</option>";
 
 
-      }
+        }
 
       }
 

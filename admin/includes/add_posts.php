@@ -36,7 +36,9 @@
   <div class="form-group">
       <label for="post_category">Post Category Id</label>
       <select class="form-control" name="post_category" id="">
+
         <?php
+        
         $query = "SELECT * FROM category";
         $select_categories = mysqli_query($connection,$query);
 
@@ -44,7 +46,7 @@
           $cat_id = $row['cat_id'];
           $cat_title = $row['cat_title'];
 
-          echo "<option value='$cat_title'>{$cat_title}</option>";
+          echo "<option value='$cat_id'>{$cat_title}</option>";
 
 
         }

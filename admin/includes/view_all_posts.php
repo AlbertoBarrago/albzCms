@@ -34,7 +34,6 @@
             echo "<td>{$post_id}</td>";
             echo "<td>{$post_author}</td>";
             echo "<td>{$post_title}</td>";
-
             $query = "SELECT * FROM category WHERE cat_id = {$post_category_id} ";
             $select_categories_id = mysqli_query($connection,$query);
 
@@ -44,11 +43,8 @@
 
               echo "<td>{$cat_title}</td>";
             }
-
-
-
             echo "<td>{$post_status}</td>";
-            echo "<td><img style='width:190px; heigth:50px;' src='../images/{$post_image}' alt='image_post'></td>";
+            echo "<td><img style='width:90px; heigth:50px;' src='../images/{$post_image}' alt='image_post'></td>";
             echo "<td>{$post_tags}</td>";
             echo "<td>{$post_comments}</td>";
             echo "<td>{$post_date}</td>";
