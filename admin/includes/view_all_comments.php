@@ -10,7 +10,6 @@
         <th>Date</th>
         <th>Approve</th>
         <th>Unapprove</th>
-        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -44,11 +43,11 @@
             // }
             echo "<td>{$comment_content}</td>";
             echo "<td>{$comment_status}</td>";
+            echo "<td>Some Title</td>";
             echo "<td>{$comment_date}</td>";
-            echo "<td> <a href='?source=edit_post&p_id={$comment_id}'>Approve</a></td>";
-            echo "<td> <a href='?delete={$comment_id}'>Unapprove</a></td>";
-            echo "<td> <a href='?source=edit_post&p_id={$comment_id}'>Edit</a></td>";
-            echo "<td> <a href='?delete={$comment_id}'>Delete</a></td>";
+            echo "<td> <a href='?source=edit_post&p_id='>Approve</a></td>";
+            echo "<td> <a href='?delete='>Unapprove</a></td>";
+            echo "<td> <a href='?delete='>Delete</a></td>";
             echo "</tr>";
 
           }
