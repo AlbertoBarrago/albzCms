@@ -139,16 +139,16 @@
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-fw fa-file"></i> Comments</a>
+                <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
-              <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
+              <a href="users.php" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="demo2" class="collapse">
                   <li>
-                      <a href="#">Dropdown Item</a>
+                      <a href="#">Add User</a>
                   </li>
                   <li>
-                      <a href="#">Dropdown Item</a>
+                      <a href="#">View All User</a>
                   </li>
               </ul>
             </li>
