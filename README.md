@@ -1,13 +1,13 @@
-🤑 #Personal Cms for purpose of study
+#Personal Cms for purpose of study 🤑
 
-Work in progress
+_Work in progress_
 
 ###Resources
- * Bootstrap Framework
- * Mysqli
- * PHP 5 or higher
- * Patience && Passion
+ -Bootstrap Framework
+ -Mysqli
+ -PHP 5 or higher
+ -Patience && Passion
 
-*Have a fun ^^*
+_Have a fun ^^_
 
 albz
