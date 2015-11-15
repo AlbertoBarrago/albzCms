@@ -120,9 +120,18 @@
       <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="author">
   </div>
 
+
   <div class="form-group">
-      <label for="post_status">Post Status</label>
-      <input value="<?php echo $post_status; ?>" type="text" class="form-control" name="post_status">
+    <label for="post_status">Post Status</label>
+
+      <h4>The status is : <b><?php echo $post_status; ?></b></h4>
+
+      <div class="checkbox" >
+      <label><input type="checkbox" name="post_status" value="approved">approved</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="post_status" value="unaprovved">unapproved</label>
+      </div>
   </div>
 
   <div class="form-group">

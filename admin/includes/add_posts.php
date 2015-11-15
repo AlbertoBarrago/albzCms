@@ -61,7 +61,12 @@
 
   <div class="form-group">
       <label for="post_status">Post Status</label>
-      <input type="text" class="form-control" name="post_status">
+      <div class="checkbox" >
+      <label><input type="checkbox" name="post_status" value="approved">approved</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" name="post_status" value="unaprovved">unapproved</label>
+      </div>
   </div>
 
   <div class="form-group">
