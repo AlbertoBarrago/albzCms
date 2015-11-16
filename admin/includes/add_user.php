@@ -18,22 +18,30 @@
 
     $create_user_query = mysqli_query($connection, $query);
 
-    confirm($create_user_query);
+      confirm($create_user_query);
 
-  }
+    }
+
+    header("Location:users.php");
 ?>
 
 
 <form action="" method="post" enctype="multipart/form-data">
 
-  <div class="form-group">
-      <label for="user_firstname">First Name</label>
-      <input type="text" class="form-control" name="user_firstname">
-  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+          <label for="user_firstname">First Name</label>
+          <input type="text" class="form-control" name="user_firstname">
+      </div>
+    </div>
 
-  <div class="form-group">
-      <label for="user_lastname">Last Name</label>
-      <input type="text" class="form-control" name="user_lastname">
+    <div class="col-md-6">
+      <div class="form-group">
+          <label for="user_lastname">Last Name</label>
+          <input type="text" class="form-control" name="user_lastname">
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
@@ -62,21 +70,8 @@
   <div class="form-group">
       <label for="user_role">User Role</label>
       <select class="form-control" name="user_role">
-        <?php
-
-        $query = "SELECT * FROM users";
-        $select_role = mysqli_query($connection,$query);
-
-        while($row = mysqli_fetch_assoc($select_role)){
-          $user_id = $row['user_id'];
-          $user_role = $row['user_role'];
-
-          echo "<option value='$user_id'>{$user_role}</option>";
-
-
-        }
-
-        ?>
+        <option value="Admin">Admin</option>
+        <option value="Guess">Guess</option>
       </select>
   </div>
 

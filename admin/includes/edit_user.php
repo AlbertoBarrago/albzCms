@@ -66,6 +66,8 @@
        die("Query Failed" . mysqli_error($connection));
      }
 
+     header("Location:users.php");
+
 
    }
 
@@ -146,21 +148,21 @@
     <label for="user_role">User Role</label>
 
     <select class="form-control" name="user_role">
+      <option value='<?php echo $user_role; ?>'><?php echo $user_role; ?></option>
       <?php
+        if(!$user_role) {
 
-      $query = "SELECT * FROM users";
-      $select_role = mysqli_query($connection,$query);
+            echo "<option value='Admin'>Admin</option>";
 
-      while($row = mysqli_fetch_assoc($select_role)){
-        $user_id = $row['user_id'];
-        $user_role = $row['user_role'];
-
-        echo "<option value='$user_id'>{$user_role}</option>";
+        } else {
 
 
-      }
+          echo "<option value='Guess'>Guess</option>";
+
+        }
 
       ?>
+
     </select>
   </div>
 
@@ -174,8 +176,6 @@
 
   </div>
 </div>
-
-
 
 
 </form>
