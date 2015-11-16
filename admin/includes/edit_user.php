@@ -88,9 +88,7 @@
           <label for="user_lastname">Last Name</label>
           <input type="text" class="form-control" name="user_lastname" value="<?php echo $user_lastname; ?>">
       </div>
-
     </div>
-
   </div>
 
 
