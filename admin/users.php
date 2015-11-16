@@ -32,7 +32,7 @@
                           break;
 
 
-                        case 'edit_post':
+                        case 'edit_user':
                           include "includes/edit_user.php";
                           break;
 
