@@ -12,8 +12,6 @@
         <th>Date</th>
         <th>Edit</th>
         <th>Delete</th>
-
-
       </tr>
     </thead>
     <tbody>
@@ -38,6 +36,7 @@
             echo "<td>{$post_id}</td>";
             echo "<td>{$post_author}</td>";
             echo "<td>{$post_title}</td>";
+
             $query = "SELECT * FROM category WHERE cat_id = {$post_category_id} ";
             $select_categories_id = mysqli_query($connection,$query);
 
@@ -57,7 +56,6 @@
             echo "</tr>";
 
           }
-
 
           if(isset($_GET['delete'])){
             $the_post_id = $_GET['delete'];

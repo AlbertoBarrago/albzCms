@@ -109,12 +109,14 @@
               <li>
                   <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
                   <ul id="demo" class="collapse">
+
+                      <li>
+                          <a href="posts.php?source=add_post">Add Post</a>
+                      </li>
                       <li>
                           <a href="posts.php">View All Posts</a>
                       </li>
-                      <li>
-                          <a href="posts.php?source=add_posts">Add Post</a>
-                      </li>
+
                   </ul>
               </li>
 
@@ -126,13 +128,13 @@
                 <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
-              <a href="users.php" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
+              <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
               <ul id="demo2" class="collapse">
                   <li>
-                      <a href="#">Add User</a>
+                      <a href="users.php?source=add_user">Add User</a>
                   </li>
                   <li>
-                      <a href="#">View All User</a>
+                      <a href="users.php">View All Users</a>
                   </li>
               </ul>
             </li>
