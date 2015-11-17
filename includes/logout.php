@@ -10,5 +10,4 @@ $_SESSION['role'] = null;
 
 header("Location: ../index.php");
 
-
 ?>
