@@ -41,24 +41,25 @@
         <!-- /.input-group -->
     </div>
 
-    <!-- Blog Search Well -->
-    <div class="well">
-        <h4 style="color:#286090;">Login</h4>
-        <form action="includes/login.php" method="post">
-        <div class="form-group">
-            <input name="text" type="text" class="form-control" placeholder="Enter Username">
-        </div>
+    <!--Login -->
+  <div class="well">
+      <h4>Login</h4>
+      <form action="includes/login.php" method="post">
+      <div class="form-group">
+          <input name="username" type="text" class="form-control" placeholder="Enter Username">
 
+      </div>
         <div class="input-group">
-          <input name="password" type="text" class="form-control" placeholder="Enter Password">
+          <input name="password" type="password" class="form-control" placeholder="Enter Password">
           <span class="input-group-btn">
-            <button type="submit" name="login" class="btn btn-primary">Submit</button>
+             <button class="btn btn-primary" name="login" type="submit">Submit
+             </button>
           </span>
-        </div>
 
-        </form><!--search form-->
-        <!-- /.input-group -->
-    </div>
+      </div>
+      </form><!--search form-->
+      <!-- /.input-group -->
+  </div>
 
     <!-- Blog Categories Well -->
     <div class="well">

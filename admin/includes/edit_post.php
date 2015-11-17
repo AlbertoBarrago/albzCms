@@ -69,6 +69,8 @@
        die("Query Failed" . mysqli_error($connection));
      }
 
+     header("Location:posts.php");
+
 
    }
 
