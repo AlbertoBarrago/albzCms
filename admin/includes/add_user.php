@@ -22,7 +22,6 @@
 
     }
 
-    header("Location:users.php");
 ?>
 
 

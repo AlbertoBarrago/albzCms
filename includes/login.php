@@ -1,5 +1,4 @@
 <?php include "db.php"; ?>
-<?php ob_start(); ?>
 <?php session_start(); ?>
 
 <?php
@@ -40,8 +39,8 @@ if(isset($_POST['login'])){
     $_SESSION['lastname'] = $db_user_lastaname;
     $_SESSION['role'] = $db_user_role;
 
-
     header('Location: ../admin');
+
   } else {
     header('Location: ../index.php');
   }
