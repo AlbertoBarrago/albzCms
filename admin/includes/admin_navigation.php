@@ -139,7 +139,7 @@
               </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-stethoscope"></i> Profile</a>
+                <a href="profile.php"><i class="fa fa-stethoscope"></i> Profile</a>
             </li>
         </ul>
     </div>
