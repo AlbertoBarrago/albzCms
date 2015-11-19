@@ -1,0 +1,17 @@
+/*
+ Personal Css for alBzCms Style
+ Author: Alberto Barrago
+ Year : 2015
+*/
+
+
+.shrinkImage {
+
+  position: relative;
+  display: block;
+  margin: 0 auto;
+
+  width: 190px;
+  height: 250px;
+
+}

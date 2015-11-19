@@ -48,7 +48,7 @@
                   <p><span class="glyphicon glyphicon-time"></span> Posted on August <?php echo $post_date; ?></p>
                   <hr>
                   <a href="post.php?p_id=<?php echo $post_id ?>">
-                    <img class="img-responsive" src="images/<?php echo $post_image; ?>" alt="image_1">
+                    <img class="img-responsive shrinkImage" src="images/<?php echo $post_image; ?>" alt="image_1">
                   </a>
                   <hr>
                   <p><?php echo $post_content; ?></p>
