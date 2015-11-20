@@ -38,6 +38,13 @@
                        <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
                      </ul>";
 
+              } else if ($_SESSION['role'] == 'Guess') {
+
+              echo "<ul class='nav navbar-nav navbar-right'>
+                       <li><a href='admin'>Hey, {$userOnline} go to Guess Panel</a></li>
+                     </ul>";
+
+
               }
 
 
