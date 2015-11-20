@@ -15,3 +15,26 @@
   height: 350px;
 
 }
+
+
+#above_the_fold h1 {
+
+  opacity: 0;
+
+  position: relative;
+  margin: 0 auto 10px auto;
+
+  top: -10px;
+
+}
+
+#above_the_fold h5 {
+
+  opacity: 0;
+
+  position: relative;
+  margin: 0 auto;
+
+  bottom: -10px;
+
+}

@@ -7,6 +7,14 @@
     <!-- Page Content -->
     <div class="container">
 
+      <!-- Intro Header - Above the fold  -->
+      <div class="row">
+        <div class="col-md-12" id="above_the_fold">
+          <h1 class="text-center">alBz Blog</h1>
+          <h5 class="text-center">Code, Design and Awesome Things</h5>
+        </div>
+      </div>
+
         <div class="row">
 
             <!-- Blog Entries Column -->
