@@ -49,9 +49,13 @@
 
         $username_session = $_SESSION['username'];
 
-          echo  '<div class="well"><h3>Sei loggato come, ' . $username_session . '</h3>' .  '<hr/> <h5> Links </h5>
-                 <ul class="list-unstyled"> <li> <a href="admin">Admin Panel</a> </li> 
-                 <li> <a href="includes/logout.php">Log Out</a> </li> </ul>' . '</div>';
+          echo  '<div class="well"><h3>Sei loggato come, ' . $username_session . '</h3>' .
+                  '<hr/> <h5>Links</h5>
+                   <ul class="list-unstyled">
+                     <li> <a href="admin">Admin Panel</a> </li>
+                     <li> <a href="includes/logout.php">Log Out</a> </li>
+                  </ul>' .
+                '</div>';
 
 
       } else {
