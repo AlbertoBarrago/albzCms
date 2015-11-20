@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Alberto Barrago | alBlogz">
     <meta name="author" content="Alberto Barrago">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
 
     <title>alBz | Personal Blog </title>
 

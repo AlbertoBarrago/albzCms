@@ -28,9 +28,21 @@
 
             </ul>
 
-            <!-- <ul class="nav navbar-nav navbar-right">
-             <li><a href="admin">Admin Panel</a></li>
-           </ul> -->
+            <?php
+
+            $userOnline = $_SESSION['username'];
+
+            if($_SESSION['role'] == 'Admin'){
+
+              echo  "<ul class='nav navbar-nav navbar-right'>
+                       <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
+                     </ul>";
+
+              }
+
+
+            ?>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>

@@ -160,6 +160,80 @@
                 </div>
                 <!-- /.row -->
 
+                <div class="row">
+
+                  <div class="col-md-6">
+
+                    <script type="text/javascript">
+                      google.load("visualization", "1.1", {packages:["bar"]});
+                      google.setOnLoadCallback(drawChart);
+                      function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                          ['Year', 'Sales', 'Expenses', 'Profit'],
+                          ['2014', 1000, 400, 200],
+                          ['2015', 1170, 460, 250],
+                          ['2016', 660, 1120, 300],
+                          ['2017', 1030, 540, 350]
+                        ]);
+
+                        var options = {
+                          chart: {
+                            title: 'Company Performance',
+                            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                          }
+                        };
+
+                        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+                        chart.draw(data, options);
+                      }
+                    </script>
+
+                    <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
+
+
+                  </div>
+
+                 <div class="col-md-6">
+
+                   <script type="text/javascript">
+                    google.load("visualization", "1", {packages:["corechart"]});
+                    google.setOnLoadCallback(drawSeriesChart);
+
+                    function drawSeriesChart() {
+
+                      var data = google.visualization.arrayToDataTable([
+                        ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
+                        ['CAN',    80.66,              1.67,      'North America',  33739900],
+                        ['DEU',    79.84,              1.36,      'Europe',         81902307],
+                        ['DNK',    78.6,               1.84,      'Europe',         5523095],
+                        ['EGY',    72.73,              2.78,      'Middle East',    79716203],
+                        ['GBR',    80.05,              2,         'Europe',         61801570],
+                        ['IRN',    72.49,              1.7,       'Middle East',    73137148],
+                        ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
+                        ['ISR',    81.55,              2.96,      'Middle East',    7485600],
+                        ['RUS',    68.6,               1.54,      'Europe',         141850000],
+                        ['USA',    78.09,              2.05,      'North America',  307007000]
+                      ]);
+
+                      var options = {
+                        title: 'Correlation between life expectancy, fertility rate and population of some world countries (2010)',
+                        hAxis: {title: 'Life Expectancy'},
+                        vAxis: {title: 'Fertility Rate'},
+                        bubble: {textStyle: {fontSize: 11}}
+                      };
+
+                      var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+                      chart.draw(data, options);
+                    }
+                    </script>
+
+                    <div id="series_chart_div" style="width: 100%; height: 500px;"></div>
+
+                 </div>
+
+                </div>
+
             </div>
             <!-- /.container-fluid -->
 
