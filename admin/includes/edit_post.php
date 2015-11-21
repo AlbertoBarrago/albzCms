@@ -122,18 +122,24 @@
       <input value="<?php echo $post_author; ?>" type="text" class="form-control" name="author">
   </div>
 
+   <div class="form-group">
+    <select name="post_status" id="" class="form-control">
+      <option value="" class="form-control"><?php echo $post_status; ?></option>
 
-  <div class="form-group">
-    <label for="post_status">Post Status</label>
+      <?php
 
-      <h4>The status is : <b><?php echo $post_status; ?></b></h4>
+        if($post_status == 'published') {
 
-      <div class="checkbox" >
-      <label><input type="checkbox" name="post_status" value="approved">approved</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="post_status" value="unapproved">unapproved</label>
-      </div>
+          echo '<option value="draft">Draft</option>';
+
+        } else {
+
+          echo '<option value="published">Published</option>';
+
+        }
+
+      ?>
+    </select>
   </div>
 
   <div class="form-group">
