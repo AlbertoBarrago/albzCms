@@ -134,7 +134,6 @@
                                  <i class="fa fa-list fa-5x"></i>
                              </div>
                              <div class="col-xs-9 text-right">
-
                                <?php
 
                                  $query = "SELECT * FROM category";
@@ -144,7 +143,7 @@
                                  echo "<div class='huge'>{$category_counts}</div>"
 
                                ?>
-                                  <div>Categories</div>
+                                <div>Categories</div>
                              </div>
                            </div>
                        </div>
@@ -159,11 +158,23 @@
                   </div>
                 </div>
                 <!-- /.row -->
+                  <?php
+
+                    $query = "SELECT * FROM posts WHERE post_status = 'unapproved' ";
+                    $unapproved_posts = mysqli_query($connection, $query);
+                    $post_unapproved_count = mysqli_num_rows($unapproved_posts);
+
+                    $query = "SELECT * FROM comments WHERE comment_status = 'unapprove' ";
+                    $unapproved_comments = mysqli_query($connection, $query);
+                    $unapproved_comment = mysqli_num_rows($unapproved_comments);
+
+                    $query = "SELECT * FROM users WHERE user_role = 'guess' ";
+                    $select_all_guess = mysqli_query($connection, $query);
+                    $guess_unapproved = mysqli_num_rows($select_all_guess);
+                  ?>
 
                 <div class="row">
-
-                  <div class="col-md-6">
-
+                  <div class="col-md-12">
                     <script type="text/javascript">
                       google.load("visualization", "1.1", {packages:["bar"]});
                       google.setOnLoadCallback(drawChart);
@@ -173,63 +184,30 @@
 
                             <?php
 
+                              $element_text = ['Action Post', 'Unapproved Posts', 'Comments', 'Pending Comments' , 'Total Users', 'Guess Users' , 'Categories'];
+                              $element_count = [$post_counts, $post_unapproved_count, $comment_counts, $unapproved_comment ,$user_counts, $guess_unapproved , $category_counts];
 
-
+                              for($i = 0; $i < 7; $i++){
+                                echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                              }
 
                             ?>
-
-                          ['Posts', 1000],
                         ]);
-
                         var options = {
                           chart: {
-                            title: 'Some Title',
-                            subtitle: 'Some subtitle',
+                            title: 'General Activities',
+                            subtitle: 'Dati utili per la scansione di utilizzo',
                           }
                         };
-
                         var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
                         chart.draw(data, options);
                       }
                     </script>
 
                     <div id="columnchart_material" style="width: 100%; height: 500px;"></div>
 
-
                   </div>
-
-                 <div class="col-md-6">
-
-                   <script type="text/javascript">
-                     google.load("visualization", "1", {packages:["corechart"]});
-                     google.setOnLoadCallback(drawChart);
-                     function drawChart() {
-                       var data = google.visualization.arrayToDataTable([
-                         ['Task', 'Hours per Day'],
-                         ['Work',     11],
-                         ['Eat',      2],
-                         ['Commute',  2],
-                         ['Watch TV', 2],
-                         ['Sleep',    7]
-                       ]);
-
-                       var options = {
-                         title: 'My Daily Activities',
-                         pieHole: 0.4,
-                       };
-
-                       var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-                       chart.draw(data, options);
-                     }
-                   </script>
-
-                    <div id="donutchart" style="width: 100%; height: 500px;"></div>
-
-                 </div>
-
                 </div>
-
             </div>
             <!-- /.container-fluid -->
 
