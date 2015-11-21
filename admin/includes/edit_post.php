@@ -132,7 +132,7 @@
       <label><input type="checkbox" name="post_status" value="approved">approved</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" name="post_status" value="unaprovved">unapproved</label>
+        <label><input type="checkbox" name="post_status" value="unapproved">unapproved</label>
       </div>
   </div>
 
