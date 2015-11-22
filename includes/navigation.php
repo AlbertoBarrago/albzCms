@@ -34,16 +34,16 @@
 
             $userOnline = $_SESSION['username'];
 
-            if($_SESSION['role'] == 'Admin'){
+            if($_SESSION['role'] == 'admin'){
 
               echo  "<ul class='nav navbar-nav navbar-right'>
                        <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
                      </ul>";
 
-              } else if ($_SESSION['role'] == 'Guess') {
+              } else if ($_SESSION['role'] == 'subscriber') {
 
               echo "<ul class='nav navbar-nav navbar-right'>
-                       <li><a href='admin'>Hey, {$userOnline} go to Guess Panel</a></li>
+                       <li><a href='javascript:void(0)'>Welcome, {$userOnline} </a></li>
                      </ul>";
 
               }

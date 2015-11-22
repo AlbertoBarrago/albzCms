@@ -77,7 +77,7 @@
 
                     } else {
 
-                      echo "<script>alert('The fields not must be empty callons')</script>";
+                      echo "<script>alert('The fields cannot be empty')</script>";
 
                     }
 

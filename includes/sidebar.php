@@ -45,7 +45,7 @@
 
 
 
-      if($_SESSION['role'] == 'Admin' || $_SESSION['role'] == 'Guess') {
+      if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'subscriber') {
 
         $username_session = $_SESSION['username'];
 
