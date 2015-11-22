@@ -21,7 +21,6 @@ if(isset($_POST['checkBoxArray'])){
         break;
 
 
-
       }
 
   }
@@ -54,7 +53,7 @@ if(isset($_POST['checkBoxArray'])){
     <div class="col-md-2">
 
         <input type="submit" name="submit" class="btn btn-success" value="Apply">
-        <a class="btn btn-primary" href="add_post.php">Add New</a>
+        <a class="btn btn-primary" href="posts.php?source=add_post">Add New</a>
 
     </div>
 

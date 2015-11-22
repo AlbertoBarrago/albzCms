@@ -64,9 +64,9 @@
       <label for="post_status">Post Status</label>
 
       <select class="form-control" name="post_status">
+        <option value="draft">Select Options</option>
         <option value="published">Published</option>
         <option value="draft">Draft</option>
-
       </select>
 
   </div>
