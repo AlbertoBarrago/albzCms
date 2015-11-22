@@ -69,7 +69,7 @@
        die("Query Failed" . mysqli_error($connection));
      }
 
-     header("Location:posts.php");
+     echo "<div class='alert alert-success' role='alert'> Post Updated: " . " " . "<a href='../post.php?p_id={$the_post_id}'>View Post </a> or <a href='posts.php'>Edit More Posts</a> " . "</div>";
 
 
    }
@@ -124,7 +124,7 @@
 
    <div class="form-group">
     <select name="post_status" id="" class="form-control">
-      <option value="" class="form-control"><?php echo $post_status; ?></option>
+      <option value="<?php echo $post_status; ?>" class="form-control"><?php echo $post_status; ?></option>
 
       <?php
 
