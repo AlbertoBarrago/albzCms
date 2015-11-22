@@ -32,8 +32,6 @@
 
             <?php
 
-
-
             $userOnline = $_SESSION['username'];
 
             if($_SESSION['role'] == 'Admin'){
