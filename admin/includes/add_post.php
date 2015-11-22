@@ -21,6 +21,8 @@
 
     confirm($create_post_query);
 
+    echo "<div class='alert alert-success' role='alert'> Post Added: " . " " . "<a href='post.php'>View Post</a> " . "</div>";
+
   }
 ?>
 
@@ -47,7 +49,6 @@
 
           echo "<option value='$cat_id'>{$cat_title}</option>";
 
-
         }
 
         ?>
@@ -61,12 +62,13 @@
 
   <div class="form-group">
       <label for="post_status">Post Status</label>
-      <div class="checkbox" >
-      <label><input type="checkbox" name="post_status" value="published">Published</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" name="post_status" value="draft">Draft</label>
-      </div>
+
+      <select class="form-control" name="post_status">
+        <option value="published">Published</option>
+        <option value="draft">Draft</option>
+
+      </select>
+
   </div>
 
   <div class="form-group">
