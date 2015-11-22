@@ -28,6 +28,8 @@ if(isset($_POST['login'])){
 
   }
 
+  $password = crypt($password, $db_user_password);
+
   if($username === $db_username && $password === $db_user_password) {
 
     $_SESSION['username'] = $db_username;
@@ -38,7 +40,7 @@ if(isset($_POST['login'])){
     header('Location: ../admin');
 
   } else {
-    
+
     header('Location: ../index.php');
   }
 

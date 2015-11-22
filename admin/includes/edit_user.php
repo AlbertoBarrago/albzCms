@@ -34,6 +34,13 @@
      $user_image_temp = $_FILES['user_image']['tmp_name'];
      $user_role = $_POST['user_role'];
 
+     $query = "SELECT user_randSalt FROM users";
+     $select_randsalt_query = mysqli_query($connection, $query);
+
+    $row = mysqli_fetch_array($select_randsalt_query);
+    $salt = $row['user_randSalt'];
+    $hashed_password = crypt($user_password, $salt);
+
 
      move_uploaded_file($user_image_temp, "../images/users/$user_image");
 
@@ -54,7 +61,7 @@
      $query .="user_firstname = '{$user_firstname}', ";
      $query .="user_lastname = '{$user_lastname}', ";
      $query .="username = '{$username}', ";
-     $query .="user_password = '{$user_password}', ";
+     $query .="user_password = '{$hashed_password}', ";
      $query .="user_email = '{$user_email}', ";
      $query .="user_image = '{$user_image}', ";
      $query .="user_role = '{$user_role}' ";
@@ -148,16 +155,15 @@
     <label for="user_role">User Role</label>
 
     <select class="form-control" name="user_role">
-      <option value='<?php echo $user_role; ?>'><?php echo $user_role; ?></option>
+      <option value='<?php echo $user_role; ?>'>Select a Role</option>
       <?php
-        if(!$user_role) {
+        if($user_role == 'Subscriber') {
 
-            echo "<option value='Admin'>Admin</option>";
+            echo "<option value='admin'>Admin</option>";
 
         } else {
 
-
-          echo "<option value='Guess'>Guess</option>";
+          echo "<option value='subscriber'>Subscriber</option>";
 
         }
 
