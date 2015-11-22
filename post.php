@@ -62,26 +62,26 @@
 
                 if(isset($_POST['create_comment'])){
 
-                    $the_post_id = $_GET['p_id'];
+                  $the_post_id = $_GET['p_id'];
 
-                    $comment_author = $_POST['comment_author'];
-                    $comment_email = $_POST['comment_email'];
-                    $comment_content = $_POST['comment_content'];
+                  $comment_author = $_POST['comment_author'];
+                  $comment_email = $_POST['comment_email'];
+                  $comment_content = $_POST['comment_content'];
 
-                    $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
-                    $query .= "VALUES ($the_post_id, '{$comment_author}', '{$comment_email}', '{$comment_content}', 'Unapproved', now())";
+                    if(!empty($comment_author) && !empty($comment_email) && !empty($comment_content)){
 
-                    $create_comment_query = mysqli_query($connection, $query);
+                      $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
+                      $query .= "VALUES ($the_post_id, '{$comment_author}', '{$comment_email}', '{$comment_content}', 'Unapproved', now())";
 
+                      $create_comment_query = mysqli_query($connection, $query);
 
-                    if(!$create_comment_query){
-                      die('QUERY FAILED' . mysqli_error($create_comment_query));
+                    } else {
+
+                      echo "<script>alert('The fields not must be empty callons')</script>";
 
                     }
 
-
                 }
-
 
               ?>
               <!-- Comments Form -->
@@ -130,28 +130,24 @@
               $comment_content= $row['comment_content'];
               $comment_author = $row['comment_author'];
 
-                  ?>
+              ?>
 
-                  <!-- Comment -->
-                  <div class="media">
-                      <a class="pull-left" href="#">
-                          <img class="media-object" src="http://placehold.it/64x64" alt="">
-                      </a>
-                      <div class="media-body">
-                          <h4 class="media-heading"> <?php echo $comment_author; ?>
-                              <small><?php echo $comment_date; ?></small>
-                          </h4>
+              <!-- Comment -->
+              <div class="media">
+                  <a class="pull-left" href="#">
+                      <img class="media-object" src="http://placehold.it/64x64" alt="">
+                  </a>
+                  <div class="media-body">
+                      <h4 class="media-heading"> <?php echo $comment_author; ?>
+                          <small><?php echo $comment_date; ?></small>
+                      </h4>
 
-                          <?php echo $comment_content; ?>
-                      </div>
+                      <?php echo $comment_content; ?>
                   </div>
-
+              </div>
 
 
                 <?php } ?>
-
-
-
 
                 <!-- Pager -->
                 <?php include "includes/pager.php"; ?>
