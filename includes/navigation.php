@@ -24,11 +24,15 @@
 
                   echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
                 }
+
+
               ?>
 
             </ul>
 
             <?php
+
+
 
             $userOnline = $_SESSION['username'];
 
@@ -44,6 +48,16 @@
                        <li><a href='admin'>Hey, {$userOnline} go to Guess Panel</a></li>
                      </ul>";
 
+              }
+
+              if(isset($_SESSION['role'])) {
+
+                  if(isset($_GET['p_id'])) {
+
+                      $the_posts_id = $_GET['p_id'];
+                      echo "<ul class='nav navbar-nav navbar-right'> <li><a href='admin/posts.php?source=edit_post&p_id={$the_posts_id}'> <i class='fa fa-edit'></i> Edit Post</a></li></ul>";
+
+                  }
 
               }
 
