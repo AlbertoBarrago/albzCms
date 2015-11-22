@@ -160,9 +160,13 @@
                 <!-- /.row -->
                   <?php
 
-                    $query = "SELECT * FROM posts WHERE post_status = 'unapproved' ";
-                    $unapproved_posts = mysqli_query($connection, $query);
-                    $post_unapproved_count = mysqli_num_rows($unapproved_posts);
+                    $query = "SELECT * FROM posts WHERE post_status = 'published' ";
+                    $published_posts = mysqli_query($connection, $query);
+                    $post_published_count = mysqli_num_rows($published_posts);
+
+                    $query = "SELECT * FROM posts WHERE post_status = 'draft' ";
+                    $draft_posts = mysqli_query($connection, $query);
+                    $post_draft_count = mysqli_num_rows($draft_posts);
 
                     $query = "SELECT * FROM comments WHERE comment_status = 'unapprove' ";
                     $unapproved_comments = mysqli_query($connection, $query);
@@ -184,10 +188,10 @@
 
                             <?php
 
-                              $element_text = ['Action Post', 'Unapproved Posts', 'Comments', 'Pending Comments' , 'Total Users', 'Guess Users' , 'Categories'];
-                              $element_count = [$post_counts, $post_unapproved_count, $comment_counts, $unapproved_comment ,$user_counts, $guess_unapproved , $category_counts];
+                              $element_text = ['All Post', 'Action Post', 'Draft Posts', 'Comments', 'Pending Comments' , 'Total Users', 'Guess Users' , 'Categories'];
+                              $element_count = [$post_counts,$post_published_count,  $post_draft_count, $comment_counts, $unapproved_comment ,$user_counts, $guess_unapproved , $category_counts];
 
-                              for($i = 0; $i < 7; $i++){
+                              for($i = 0; $i < 8; $i++){
                                 echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
                               }
 

@@ -44,7 +44,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Google Charts -->
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- TinyMCE -->
+    <script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
 
 </head>
 

@@ -62,10 +62,10 @@
   <div class="form-group">
       <label for="post_status">Post Status</label>
       <div class="checkbox" >
-      <label><input type="checkbox" name="post_status" value="approved">approved</label>
+      <label><input type="checkbox" name="post_status" value="published">Published</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" name="post_status" value="unaprovved">unapproved</label>
+        <label><input type="checkbox" name="post_status" value="draft">Draft</label>
       </div>
   </div>
 
