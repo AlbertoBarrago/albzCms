@@ -6,7 +6,7 @@
 <?php
 
 
-  if($_SESSION['role'] !== 'Admin'){
+  if($_SESSION['role'] !== 'admin'){
 
     header("Location: ../index.php");
 
