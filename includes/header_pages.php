@@ -4,7 +4,13 @@
 
 <?php
 
-  $query = "SELECT * FROM pages";
+  if(isset($_GET['page_id'])){
+
+    $the_page_id = $_GET['page_id'];
+
+  }
+
+  $query = "SELECT * FROM pages WHERE page_id = $the_page_id ";
   $query_select_page = mysqli_query($connection,$query);
 
   while($row= mysqli_fetch_array($query_select_page)) {
