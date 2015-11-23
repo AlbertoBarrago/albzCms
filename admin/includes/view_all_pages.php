@@ -8,8 +8,10 @@
         <th>Status</th>
         <th>Page</th>
         <th>Date</th>
+        <th>Edit</th>
         <th>Publish</th>
         <th>Pending</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -44,6 +46,7 @@
 
             }
             echo "<td>{$page_date}</td>";
+            echo "<td> <a href='?source=edit_page&page_id={$page_id}'>Edit Page</a></td>";
             echo "<td> <a href='pages.php?published=$page_id'>Published</a></td>";
             echo "<td> <a href='pages.php?pending=$page_id'>Pending</a></td>";
             echo "<td> <a href='pages.php?delete=$page_id'>Delete</a></td>";

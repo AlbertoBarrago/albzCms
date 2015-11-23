@@ -39,8 +39,9 @@
     <label for="page_status">Choise Theme</label>
       <select class="form-control" name="page_theme">
 
-        <option value='base'>Seleziona Tema</option>
-        <option value='base'>Base</option>
+        <option value='main.css'>Seleziona Tema</option>
+        <option value='main.css'>Main</option>
+        <option value='second.css'>Alternative</option>
       </select>
   </div>
 

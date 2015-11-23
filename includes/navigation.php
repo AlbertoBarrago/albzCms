@@ -22,7 +22,7 @@
                   $page_id = $row['page_id'];
                   $page_title = $row['page_title'];
 
-                  echo "<li><a href='category.php?category=$page_id'>{$page_title}</a></li>";
+                  echo "<li><a href='page.php?page_id=$page_id'>{$page_title}</a></li>";
                 }
 
 

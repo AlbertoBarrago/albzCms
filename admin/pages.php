@@ -30,7 +30,7 @@
                           include "includes/add_page.php";
                           break;
 
-                        case 'edit_post':
+                        case 'edit_page':
                           include "includes/edit_page.php";
                           break;
 
