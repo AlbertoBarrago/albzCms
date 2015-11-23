@@ -33,12 +33,12 @@
             echo "<tr>";
             echo "<td>{$page_id}</td>";
             echo "<td>{$page_title}</td>";
-            echo "<td>{$page_subtitle }</td>";
+            echo "<td>{$page_subtitle}</td>";
             echo "<td>{$page_theme}</td>";
             echo "<td>{$page_status}</td>";
             $query = "SELECT * FROM pages WHERE page_id = $page_id ";
-            $select_post_id_query = mysqli_query($connection, $query);
-            while($row = mysqli_fetch_assoc($select_post_id_query)){
+            $select_page_id_query = mysqli_query($connection, $query);
+            while($row = mysqli_fetch_assoc($select_page_id_query)){
               $page_id = $row['page_id'];
               $page_title = $row['page_title'];
 

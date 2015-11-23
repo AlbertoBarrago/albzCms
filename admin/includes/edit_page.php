@@ -12,11 +12,11 @@
   while($row = mysqli_fetch_assoc($select_pages_by_id)){
 
     $page_id = $row['page_id'];
+    $page_theme = $row['page_theme'];
     $page_title = $row['page_title'];
     $page_subtitle = $row['page_subtitle'];
     $page_status = $row['page_status'];
     $page_content = $row['page_content'];
-    $page_theme = $row['page_theme'];
     $page_date = $row['page_date'];
 
  }
@@ -26,20 +26,20 @@
 
      $page_title = $_POST['page_title'];
      $page_subtitle = $_POST['page_subtitle'];
+     $page_theme = $_POST['page_theme'];
      $page_status = $_POST['page_status'];
-     $post_theme = $_POST['page_theme'];
      $page_content = $_POST['page_content'];
 
 
      }
 
      $query = "UPDATE pages SET ";
+     $query .="page_theme = '{$page_theme}', ";
      $query .="page_title = '{$page_title}', ";
      $query .="page_subtitle = '{$page_subtitle}', ";
      $query .="page_date = now(), ";
      $query .="page_status = '{$page_status}', ";
-     $query .="page_content = '{$page_content}', ";
-     $query .="page_theme = '{$page_theme}' ";
+     $query .="page_content = '{$page_content}' ";
      $query .= "WHERE page_id = {$the_page_id} ";
 
      $update_page = mysqli_query($connection, $query);
@@ -54,7 +54,7 @@
 ?>
 
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="" method="post">
 
   <div class="form-group">
       <label for="title">Page Title</label>
@@ -65,13 +65,29 @@
       <label for="post_category">Page Subtitle</label>
       <input type="text" class="form-control" name="page_subtitle" value="<?php echo $page_subtitle; ?>">
   </div>
+
   <div class="form-group">
-    <label for="page_status">Choise Theme</label>
+    <label for="page_theme">Choise Theme </label> <br> <i>Actual Theme is <?php echo $page_theme; ?></i>
       <select class="form-control" name="page_theme">
 
-        <option value='<?php echo $page_theme; ?>'>Seleziona Tema</option>
-        <option value='main.css'>Main</option>
-        <option value='second.css'>Alternative</option>
+        <option value="<?php echo $page_theme; ?>">Select Value</option>
+
+        <?php
+
+          if($page_theme !== 'main.css') {
+
+            echo "<option value='main.css'>Main</option> ";
+
+          } else {
+
+            echo "<option value='second.css'>Alternative</option>";
+
+          }
+
+        ?>
+
+
+
       </select>
   </div>
 
@@ -96,7 +112,7 @@
 
   <div class="form-group">
 
-    <input class="btn btn-primary" type="submit" name="create_page" value="Publish Post">
+    <input class="btn btn-primary" type="submit" name="update_page" value="Update Page">
 
   </div>
 

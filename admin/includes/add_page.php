@@ -36,7 +36,7 @@
       <input type="text" class="form-control" name="page_subtitle">
   </div>
   <div class="form-group">
-    <label for="page_status">Choise Theme</label>
+    <label for="page_theme">Choise Theme</label>
       <select class="form-control" name="page_theme">
 
         <option value='main.css'>Seleziona Tema</option>
