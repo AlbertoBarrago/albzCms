@@ -36,6 +36,7 @@
       <input type="text" class="form-control" name="page_subtitle">
   </div>
   <div class="form-group">
+    <label for="page_status">Choise Theme</label>
       <select class="form-control" name="page_theme">
 
         <option value='base'>Seleziona Tema</option>
@@ -44,7 +45,7 @@
   </div>
 
   <div class="form-group">
-      <label for="page_status">Post Status</label>
+      <label for="page_status">Page Status</label>
 
       <select class="form-control" name="page_status">
         <option value="pending">Select Options</option>
@@ -56,7 +57,7 @@
 
 
   <div class="form-group">
-      <label for="page_content">Post Content</label>
+      <label for="page_content">Page Content</label>
       <textarea name="page_content" class="form-control" rows="10" cols="30"></textarea>
   </div>
 

@@ -40,7 +40,7 @@
               $page_id = $row['page_id'];
               $page_title = $row['page_title'];
 
-              echo "<td><a href='../post.php?p_id=$page_id'>{$page_title}</a></td>";
+              echo "<td><a href='../page.php?page_id=$page_id'>{$page_title}</a></td>";
 
             }
             echo "<td>{$page_date}</td>";

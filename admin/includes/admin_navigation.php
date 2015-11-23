@@ -116,7 +116,7 @@
                         <a href="pages.php?source=add_page">Add Page</a>
                     </li>
                     <li>
-                        <a href="posts.php">View All Pages</a>
+                        <a href="pages.php">View All Pages</a>
                     </li>
 
                 </ul>
