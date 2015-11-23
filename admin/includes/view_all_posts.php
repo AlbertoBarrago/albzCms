@@ -15,6 +15,35 @@ if(isset($_POST['checkBoxArray'])){
           $query = "UPDATE posts SET post_status = '{$bulk_options}' WHERE post_id = {$postValueId} ";
           $update_draft_status = mysqli_query($connection, $query);
         break;
+        case 'clone':
+          $query = "SELECT * FROM posts WHERE post_id = {$postValueId} ";
+          $update_clone_status = mysqli_query($connection, $query);
+
+          while($row = mysqli_fetch_array($update_clone_status)) {
+
+            $post_category = $row['post_category_id'];
+            $post_title = $row['post_title'];
+            $post_date = $row['post_date'];
+            $post_author = $row['post_author'];
+            $post_status = $row['post_status'];
+            $post_image = $row['post_image'];
+            $post_tags = $row['post_tags'];
+            $post_content = $row['post_content'];
+
+          }
+
+          $query = "INSERT INTO posts(post_category_id, post_title, post_date, post_author, post_status, post_image, post_tags, post_content) ";
+          $query .= "VALUES({$post_category},'{$post_title}',now(),'{$post_author}','draft','{$post_image}','{$post_tags}','{$post_content}') ";
+
+          $copy_query = mysqli_query($connection, $query);
+
+          if(!$copy_query) {
+
+            die("QUERY FAILED" . mysqli_error($connection));
+          }
+
+
+        break;
         case 'delete':
           $query = "DELETE FROM posts WHERE post_id = {$postValueId} ";
           $update_delete_status = mysqli_query($connection, $query);
@@ -43,7 +72,9 @@ if(isset($_POST['checkBoxArray'])){
             <option value="">Select Options</option>
             <option value="published">Publish</option>
             <option value="draft">Draft</option>
+            <option value="clone">Clone</option>
             <option value="delete">Delete</option>
+
 
           </select>
       </div>
@@ -83,7 +114,7 @@ if(isset($_POST['checkBoxArray'])){
 
           <?php
 
-            $query = "SELECT * FROM posts";
+            $query = "SELECT * FROM posts ORDER BY post_id DESC ";
             $select_posts = mysqli_query($connection,$query);
 
             while($row = mysqli_fetch_assoc($select_posts)){

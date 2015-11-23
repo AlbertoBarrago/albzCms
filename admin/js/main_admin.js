@@ -24,7 +24,7 @@ $('document').ready(function(){
  });
 
 
-//function to Select All checkBoxes 
+//function to Select All checkBoxes
 $('#selectAllBoxes').click(function(event){
   if(this.checked) {
 
@@ -43,6 +43,13 @@ $('#selectAllBoxes').click(function(event){
     })
 
   }
+});
+
+
+var div_box = "<div id='load-screen'><div id='loading'></div></div>";
+$("body").prepend(div_box);
+$('#load-screen').delay(700).fadeOut(600, function(){
+    $(this).remove();
 });
 
 });

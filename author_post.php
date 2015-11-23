@@ -37,8 +37,8 @@
                   ?>
 
                   <h1 class="page-header">
-                      Page Heading
-                      <small>Secondary Text</small>
+                      Author Post
+                      <small> Enjoy <?php echo $_SESSION['username']; ?> ^^</small>
                   </h1>
 
                   <!-- First Blog Post -->
@@ -46,7 +46,7 @@
                       <a href="#"><?php echo $post_title; ?></a>
                   </h2>
                   <p class="lead">
-                      by <a href=""><?php echo $post_author; ?></a>
+                      All Posts by <?php echo $post_author; ?>
                   </p>
                   <p><span class="glyphicon glyphicon-time"></span> Posted on August <?php echo $post_date; ?></p>
                   <hr>
