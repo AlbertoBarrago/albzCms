@@ -21,7 +21,8 @@
 
     confirm($create_post_query);
 
-    echo "<div class='alert alert-success' role='alert'> Post Added: " . " " . "<a href='post.php'>View Post</a> " . "</div>";
+
+    echo "<div class='alert alert-success' role='alert'> Post Added: " . " " . "<a href='posts.php'>View Post</a> " . "</div>";
 
   }
 ?>
