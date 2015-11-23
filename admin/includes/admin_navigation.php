@@ -91,8 +91,8 @@
             </li>
 
               <li>
-                  <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-table"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
-                  <ul id="demo" class="collapse">
+                  <a href="javascript:;" data-toggle="collapse" data-target="#post"><i class="fa fa-fw fa-table"></i> Post <i class="fa fa-fw fa-caret-down"></i></a>
+                  <ul id="post" class="collapse">
 
                       <li>
                           <a href="posts.php?source=add_post">Add Post</a>
@@ -109,11 +109,25 @@
             </li>
 
             <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#page"><i class="fa fa-plus-square"></i> Page <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="page" class="collapse">
+
+                    <li>
+                        <a href="pages.php?source=add_page">Add Page</a>
+                    </li>
+                    <li>
+                        <a href="posts.php">View All Pages</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
                 <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
             </li>
             <li>
-              <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
-              <ul id="demo2" class="collapse">
+              <a href="javascript:;" data-toggle="collapse" data-target="#user"><i class="fa fa-fw fa-user"></i> User <i class="fa fa-fw fa-caret-down"></i></a>
+              <ul id="user" class="collapse">
                   <li>
                       <a href="users.php?source=add_user">Add User</a>
                   </li>
