@@ -12,12 +12,12 @@
   $count = mysqli_num_rows($send_query);
 
   if($count == NULL){
-    mysqli_query($connection, "INSERT INTO users_online(session, time) VALUES('$time','$session')");
+    mysqli_query($connection, "INSERT INTO users_online(session, time) VALUES('$session','$time')");
   } else {
     mysqli_query($connection, "UPDATE users_online SET time = '$time' WHERE session = '$session' ");
   }
 
-  $user_online_query = mysqli_query($connection, "SELECT * FROM users_online WHERE time < '$time_out' ");
+  $user_online_query = mysqli_query($connection, "SELECT * FROM users_online WHERE time > '$time_out' ");
   $count_user = mysqli_num_rows($user_online_query);
 
 ?>
@@ -30,7 +30,7 @@
 
             <div class="container-fluid">
 
-              <?php echo $count_user; ?>
+              Users Online: <?php echo $count_user; ?>
 
                 <!-- Page Heading -->
                 <div class="row">
