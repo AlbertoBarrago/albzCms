@@ -19,44 +19,50 @@
     <?php
 
 
+      if($_SESSION){
 
-      if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'subscriber') {
+        if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'subscriber') {
 
-        $username_session = $_SESSION['username'];
+          $username_session = $_SESSION['username'];
 
-          echo  '<div class="well"><h3>Sei loggato come, ' . $username_session . '</h3>' .
-                  '<hr/> <h5>Links</h5>
-                   <ul class="list-unstyled">
-                     <li> <a href="admin">Admin Panel</a> </li>
-                     <li> <a href="includes/logout.php">Log Out</a> </li>
-                  </ul>' .
-                '</div>';
+            echo  '<div class="well"><h3>Sei loggato come, ' . $username_session . '</h3>' .
+                    '<hr/> <h5>Links</h5>
+                     <ul class="list-unstyled">
+                       <li> <a href="admin">Admin Panel</a> </li>
+                       <li> <a href="includes/logout.php">Log Out</a> </li>
+                    </ul>' .
+                  '</div>';
 
 
-      } else {
+        }
+      }
 
-          echo '<div class="well">
-                <h4>Login</h4>
-                <form action="includes/login.php" method="post">
-                <div class="form-group">
-                    <input name="username" type="text" class="form-control" placeholder="Enter Username">
 
-                </div>
-                  <div class="input-group">
-                    <input name="password" type="password" class="form-control" placeholder="Enter Password">
-                    <span class="input-group-btn">
-                       <button class="btn btn-primary" name="login" type="submit">Submit
-                       </button>
-                    </span>
+        if(!$_SESSION) {
 
-                </div>
-              </form>
+        echo '<div class="well">
+              <h4>Login</h4>
+              <form action="includes/login.php" method="post">
+              <div class="form-group">
+                  <input name="username" type="text" class="form-control" placeholder="Enter Username">
 
-            </div>';
+              </div>
+                <div class="input-group">
+                  <input name="password" type="password" class="form-control" placeholder="Enter Password">
+                  <span class="input-group-btn">
+                     <button class="btn btn-primary" name="login" type="submit">Submit
+                     </button>
+                  </span>
 
-    }
+              </div>
+            </form>
+
+          </div>';
+        }
+
 
     ?>
+
 
 
 

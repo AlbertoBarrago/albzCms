@@ -32,19 +32,24 @@
 
             <?php
 
-            $userOnline = $_SESSION['username'];
 
-            if($_SESSION['role'] == 'admin'){
+            if($_SESSION){
 
-              echo  "<ul class='nav navbar-nav navbar-right'>
-                       <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
-                     </ul>";
+              $userOnline = $_SESSION['username'];
 
-              } else if ($_SESSION['role'] == 'subscriber') {
+              if($_SESSION['role'] == 'admin'){
 
-              echo "<ul class='nav navbar-nav navbar-right'>
-                       <li><a href='javascript:void(0)'>Welcome, {$userOnline} </a></li>
-                     </ul>";
+                echo  "<ul class='nav navbar-nav navbar-right'>
+                         <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
+                       </ul>";
+
+                } else if ($_SESSION['role'] == 'subscriber') {
+
+                echo "<ul class='nav navbar-nav navbar-right'>
+                         <li><a href='javascript:void(0)'>Welcome, {$userOnline} </a></li>
+                       </ul>";
+
+                }
 
               }
 
