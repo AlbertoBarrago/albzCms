@@ -47,8 +47,6 @@
 
                 $count = ceil($count / $per_page);
 
-
-
                 $query = "SELECT * FROM posts LIMIT $page_1, $per_page";
                 $select_all_posts_query = mysqli_query($connection,$query);
 
@@ -71,7 +69,6 @@
                   </h1>
 
                   <!-- First Blog Post -->
-                  <h1>There are <?php echo $count; ?></h1>
                   <h2>
                     <a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo $post_title; ?></a>
                   </h2>
