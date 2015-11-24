@@ -148,8 +148,6 @@
 
                 <?php } ?>
 
-                <!-- Pager -->
-                <?php include "includes/pager.php"; ?>
 
             </div>
 
