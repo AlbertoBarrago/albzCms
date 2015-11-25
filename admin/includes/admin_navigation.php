@@ -12,7 +12,8 @@
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
-      <li><a href="#"> Online <b><?php echo usersOnline(); ?></b></a></li>
+      <!-- <li><a href="#"> Online <b>useronlineFunction</b></a></li> -->
+        <li> <a href="javascript:void(0);">User Online <span class="useronline"></span></a></li>
       <li><a href="../index.php">View Front-End</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
