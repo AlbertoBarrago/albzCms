@@ -28,43 +28,54 @@
 
               ?>
 
+
+
             </ul>
 
-            <?php
+            <ul class="nav navbar-nav navbar-right">
 
 
-            if($_SESSION){
+              <?php
 
-              $userOnline = $_SESSION['username'];
 
-              if($_SESSION['role'] == 'admin'){
+              if($_SESSION){
 
-                echo  "<ul class='nav navbar-nav navbar-right'>
-                         <li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>
-                       </ul>";
+                $userOnline = $_SESSION['username'];
 
-                } else if ($_SESSION['role'] == 'subscriber') {
+                if($_SESSION['role'] == 'admin'){
 
-                echo "<ul class='nav navbar-nav navbar-right'>
-                         <li><a href='javascript:void(0)'>Welcome, {$userOnline} </a></li>
-                       </ul>";
+                  echo  "<li><a href='admin'>Hey, {$userOnline} go to Admin Panel</a></li>";
 
-                }
+                  } else if ($_SESSION['role'] == 'subscriber') {
 
-              }
-
-              if(isset($_SESSION['role'])) {
-
-                  if(isset($_GET['p_id'])) {
-
-                      $the_posts_id = $_GET['p_id'];
-                      echo "<ul class='nav navbar-nav navbar-right'> <li><a href='admin/posts.php?source=edit_post&p_id={$the_posts_id}'> <i class='fa fa-edit'></i> Edit Post</a></li></ul>";
+                  echo "<li><a href='javascript:void(0)'>Welcome, {$userOnline} </a></li>";
 
                   }
 
-              }
+                }
 
-            ?>
+
+                if(isset($_SESSION['role'])) {
+
+                    if(isset($_GET['p_id'])) {
+
+                        $the_posts_id = $_GET['p_id'];
+                        echo "<ul class='nav navbar-nav navbar-right'> <li><a href='admin/posts.php?source=edit_post&p_id={$the_posts_id}'> <i class='fa fa-edit'></i> Edit Post</a></li></ul>";
+
+                    }
+
+                }
+
+              ?>
+
+              <?php if ($_SESSION['role'] == NULL) {
+
+                echo "<li><a href='registration.php'>Registration</a></li>";
+
+               }
+              ?>
+
+            </ul>
 
         </div>
         <!-- /.navbar-collapse -->
