@@ -23,12 +23,14 @@ $message = "";
         $email    = mysqli_real_escape_string($connection, $email);
         $password = mysqli_real_escape_string($connection, $password);
 
-        $query = "SELECT user_randSalt FROM users";
-        $select_randsalt_query = mysqli_query($connection, $query);
+        $password = password_hash( $password, PASSWORD_BCRYPT, array('cost' => 12));
 
-        $salt = $row['user_randSalt'];
-
-        $password = crypt($password, $salt);
+        // $query = "SELECT user_randSalt FROM users";
+        // $select_randsalt_query = mysqli_query($connection, $query);
+        //
+        // $salt = $row['user_randSalt'];
+        //
+        // $password = crypt($password, $salt);
 
         $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
         $query .= "VALUES ('{$username}', '{$email}', '{$password}', 'subscriber')";
@@ -43,7 +45,6 @@ $message = "";
 
 
       }
-
 
 
   }
