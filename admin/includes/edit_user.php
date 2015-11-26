@@ -34,12 +34,6 @@
      $user_image_temp = $_FILES['user_image']['tmp_name'];
      $user_role = $_POST['user_role'];
 
-     $query = "SELECT user_randSalt FROM users";
-     $select_randsalt_query = mysqli_query($connection, $query);
-
-    $row = mysqli_fetch_array($select_randsalt_query);
-    $salt = $row['user_randSalt'];
-    $hashed_password = crypt($user_password, $salt);
 
 
      move_uploaded_file($user_image_temp, "../images/users/$user_image");
@@ -56,6 +50,24 @@
        }
 
      }
+
+     if(!empty($user_password)){
+
+      $query_password = "SELECT user_password FROM users WHERE user_id = $user_id";
+      $get_user_query = mysqli_query($connection, $query);
+      confirm($get_user);
+
+      $row = mysqli_fetch_array($get_user_query);
+
+      $db_user_password = $row['user_password'];
+
+     }
+
+     if($db_user_password != $user_password) {
+       $hashed_password = password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 10));
+     }
+
+
 
      $query = "UPDATE users SET ";
      $query .="user_firstname = '{$user_firstname}', ";
