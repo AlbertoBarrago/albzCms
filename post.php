@@ -18,8 +18,16 @@
 
                 $the_post_id = $_GET['p_id'];
 
-                $view_query = $query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $the_post_id ";
-                $send_query = mysqli_query($connection,$view_query);
+
+                $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+                if(!$pageWasRefreshed ) {
+
+                  $view_query = $query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $the_post_id ";
+                  $send_query = mysqli_query($connection,$view_query);
+
+                } 
+
 
                 $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
                 $select_all_posts_query = mysqli_query($connection,$query);
@@ -74,9 +82,6 @@
 
                       $create_comment_query = mysqli_query($connection, $query);
 
-                      $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 ";
-                      $query .= "WHERE post_id = $the_post_id ";
-                      $update_comment_count = mysqli_query($connection, $query);
 
                     } else {
 
