@@ -13,7 +13,7 @@
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
       <!-- <li><a href="#"> Online <b>useronlineFunction</b></a></li> -->
-        <li> <a href="javascript:void(0);">User Online <span class="useronline"></span></a></li>
+      <li> <a href="javascript:void(0);">User Online <span class="useronline"></span></a></li>
       <li><a href="../index.php">View Front-End</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
@@ -55,8 +55,9 @@
             </ul>
         </li>
 
+
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION['username']; ?> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img class="img-circle" style="width:20px;height:20px;" src="../images/users/<?php echo $_SESSION['image'] ?>" alt="altImage" />  <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>

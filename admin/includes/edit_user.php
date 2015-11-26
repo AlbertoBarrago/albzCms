@@ -4,8 +4,6 @@
 
     $the_user_id = $_GET['user_id'];
 
-  }
-
   $query = "SELECT * FROM users WHERE user_id = $the_user_id ";
   $select_users_by_id = mysqli_query($connection,$query);
 
@@ -22,73 +20,70 @@
 
  }
 
+ if(isset($_POST['update_user'])){
 
-   if(isset($_POST['update_user'])){
+   $user_firstname = $_POST['user_firstname'];
+   $user_lastname = $_POST['user_lastname'];
+   $username = $_POST['username'];
+   $user_password = $_POST['user_password'];
+   $user_email = $_POST['user_email'];
+   $user_image = $_FILES['user_image']['name'];
+   $user_image_temp = $_FILES['user_image']['tmp_name'];
+   $user_role = $_POST['user_role'];
 
-     $user_firstname = $_POST['user_firstname'];
-     $user_lastname = $_POST['user_lastname'];
-     $username = $_POST['username'];
-     $user_password = $_POST['user_password'];
-     $user_email = $_POST['user_email'];
-     $user_image = $_FILES['user_image']['name'];
-     $user_image_temp = $_FILES['user_image']['tmp_name'];
-     $user_role = $_POST['user_role'];
+   move_uploaded_file($user_image_temp, "../images/users/$user_image");
 
+   if(empty($user_image)){
 
+     $query = "SELECT * FROM users WHERE user_id = $the_user_id ";
+     $select_user_image = mysqli_query($connection, $query);
 
-     move_uploaded_file($user_image_temp, "../images/users/$user_image");
+     while($row = mysqli_fetch_assoc($select_user_image)){
 
-     if(empty($user_image)){
-
-       $query = "SELECT * FROM users WHERE user_id = $the_user_id ";
-       $select_user_image = mysqli_query($connection, $query);
-
-       while($row = mysqli_fetch_assoc($select_user_image)){
-
-         $user_image = $row['user_image'];
-
-       }
+       $user_image = $row['user_image'];
 
      }
-
-     if(!empty($user_password)){
-
-      $query_password = "SELECT user_password FROM users WHERE user_id = $user_id";
-      $get_user_query = mysqli_query($connection, $query);
-      confirm($get_user);
-
-      $row = mysqli_fetch_array($get_user_query);
-
-      $db_user_password = $row['user_password'];
-
-     }
-
-     if($db_user_password != $user_password) {
-       $hashed_password = password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 10));
-     }
-
-
-
-     $query = "UPDATE users SET ";
-     $query .="user_firstname = '{$user_firstname}', ";
-     $query .="user_lastname = '{$user_lastname}', ";
-     $query .="username = '{$username}', ";
-     $query .="user_password = '{$hashed_password}', ";
-     $query .="user_email = '{$user_email}', ";
-     $query .="user_image = '{$user_image}', ";
-     $query .="user_role = '{$user_role}' ";
-     $query .= "WHERE user_id = {$the_user_id} ";
-
-     $update_user = mysqli_query($connection, $query);
-
-     if(!$update_user) {
-       die("Query Failed" . mysqli_error($connection));
-     }
-
-     header("Location:users.php");
-
 
    }
+
+   if(!empty($user_password)){
+
+    $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
+    $get_user_query = mysqli_query($connection, $query_password);
+    confirm($get_user_query);
+
+    $row = mysqli_fetch_array($get_user_query);
+
+    $db_user_password = $row['user_password'];
+
+
+   if($db_user_password != $user_password) {
+
+     $hashed_password = password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 10));
+
+   }
+
+   $query = "UPDATE users SET ";
+   $query .="user_firstname = '{$user_firstname}', ";
+   $query .="user_lastname = '{$user_lastname}', ";
+   $query .="username = '{$username}', ";
+   $query .="user_password = '{$hashed_password}', ";
+   $query .="user_email = '{$user_email}', ";
+   $query .="user_image = '{$user_image}', ";
+   $query .="user_role = '{$user_role}' ";
+   $query .= "WHERE user_id = {$the_user_id} ";
+
+   $update_user = mysqli_query($connection, $query);
+
+   echo "User Updated" . " <a href='users.php'>View Users</a>";
+
+ }
+
+  } } else {
+
+    header("Location: index.php");
+
+  }
 
 ?>
 
@@ -131,11 +126,13 @@
 
   <div class="row">
       <hr>
-    <div class="col-md-8">
-      <img src='../images/users/<?php echo $user_image; ?>' alt='user_image_edit' style="width:90%;height:290px"; />
+    <div class="col-md-6 text-center">
+      <img src='../images/users/<?php echo $user_image; ?>' alt='user_image_edit' style="width:120px;height:120px; display:block; position:relative; margin:0 auto;"; class="img-circle"/>
+      <h1><?php echo $username; ?></h1>
+      <h5>Have an awesome day ser <?php echo $user_lastname; ?></h5>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div class="form-group">
         <div class="form-group">
             <label for="user_image">Select New Image</label>

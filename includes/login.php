@@ -21,6 +21,7 @@ if(isset($_POST['login'])){
 
    $db_user_id = $row['user_id'];
    $db_username = $row['username'];
+   $db_user_image = $row['user_image'];
    $db_user_password = $row['user_password'];
    $db_user_firstname = $row['user_firstname'];
    $db_user_lastname = $row['user_lastname'];
@@ -36,6 +37,7 @@ if(isset($_POST['login'])){
     $_SESSION['firstname'] = $db_user_firstname;
     $_SESSION['lastname'] = $db_user_lastaname;
     $_SESSION['role'] = $db_user_role;
+    $_SESSION['image'] = $db_user_image;
 
     header('Location: ../admin');
 
