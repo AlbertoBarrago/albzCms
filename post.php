@@ -26,7 +26,7 @@
                   $view_query = $query = "UPDATE posts SET post_views_count = post_views_count + 1 WHERE post_id = $the_post_id ";
                   $send_query = mysqli_query($connection,$view_query);
 
-                } 
+                }
 
 
                 $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
@@ -34,7 +34,7 @@
 
                 while($row = mysqli_fetch_assoc($select_all_posts_query)) {
                   $post_title = $row['post_title'];
-                  $post_author = $row['post_author'];
+                  $post_user = $row['post_user'];
                   $post_date = $row['post_date'];
                   $post_image = $row['post_image'];
                   $post_content = $row['post_content'];
@@ -52,7 +52,7 @@
                       <a href="#"><?php echo $post_title; ?></a>
                   </h2>
                   <p class="lead">
-                      by <a href="author_post.php?author=<?php echo $post_author; ?>&p_id=<?php echo $the_post_id; ?>"><?php echo $post_author; ?></a>
+                      by <a href="author_post.php?user=<?php echo $post_user; ?>&p_id=<?php echo $the_post_id; ?>"><?php echo $post_user; ?></a>
                   </p>
                   <p><span class="glyphicon glyphicon-time"></span> Posted on August <?php echo $post_date; ?> | <span class="fa fa-eye"></span> <?php echo $post_views_count; ?></p>
                   <hr>
