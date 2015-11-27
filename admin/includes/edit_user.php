@@ -59,7 +59,7 @@
 
    if($db_user_password != $user_password) {
 
-     $hashed_password = password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 10));
+     $user_password = password_hash( $user_password, PASSWORD_BCRYPT, array('cost' => 10));
 
    }
 
@@ -67,7 +67,7 @@
    $query .="user_firstname = '{$user_firstname}', ";
    $query .="user_lastname = '{$user_lastname}', ";
    $query .="username = '{$username}', ";
-   $query .="user_password = '{$hashed_password}', ";
+   $query .="user_password = '{$user_password}', ";
    $query .="user_email = '{$user_email}', ";
    $query .="user_image = '{$user_image}', ";
    $query .="user_role = '{$user_role}' ";
