@@ -20,13 +20,13 @@
           $select_comments = mysqli_query($connection,$query);
 
           while($row = mysqli_fetch_assoc($select_comments)){
-            $comment_id = $row['comment_id'];
-            $comment_post_id = $row['comment_post_id'];
-            $comment_author = $row['comment_author'];
-            $comment_email = $row['comment_email'];
-            $comment_content = $row['comment_content'];
-            $comment_status = $row['comment_status'];
-            $comment_date = $row['comment_date'];
+            $comment_id = escape($row['comment_id']);
+            $comment_post_id = escape($row['comment_post_id']);
+            $comment_author = escape($row['comment_author']);
+            $comment_email = escape($row['comment_email']);
+            $comment_content = escape($row['comment_content']);
+            $comment_status = escape($row['comment_status']);
+            $comment_date = escape($row['comment_date']);
 
             echo "<tr>";
             echo "<td>{$comment_id}</td>";
@@ -78,7 +78,7 @@
                 if(isset($_SESSION['role'])) {
 
                   if($_SESSION['role'] == 'admin') {
-                  $the_comment_id = $_GET['delete'];
+                  $the_comment_id = escape($_GET['delete']);
 
                   $query ="DELETE FROM comments WHERE comment_id = $the_comment_id ";
                   $delete_query = mysqli_query($connection, $query);
@@ -88,7 +88,7 @@
                 }
 
               }
-              
+
             }
 
 

@@ -1,5 +1,14 @@
 <?php
 
+//Anti injection function 
+function escape($string){
+
+  global $connection;
+
+  return mysqli_real_escape_string($connection,$string);
+
+}
+
 function confirm($result){
 
   global $connection;
