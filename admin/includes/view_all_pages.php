@@ -56,7 +56,7 @@
 
           // Change status on Approve status for comment
           if(isset($_GET['published'])){
-            $the_page_id = $_GET['published'];
+            $the_page_id = escape($_GET['published']);
 
             $query ="UPDATE pages SET page_status = 'published' WHERE page_id = $the_page_id ";
             $published_query = mysqli_query($connection, $query);
@@ -67,7 +67,7 @@
 
           // Change status on Unapprove status for comment
           if(isset($_GET['pending'])){
-            $the_page_id = $_GET['pending'];
+            $the_page_id = escape($_GET['pending']);
 
             $query ="UPDATE pages SET page_status = 'pending' WHERE page_id = $the_page_id ";
             $pending_query = mysqli_query($connection, $query);
@@ -77,7 +77,7 @@
           }
 
           if(isset($_GET['delete'])){
-            $the_page_id = $_GET['delete'];
+            $the_page_id = escape($_GET['delete']);
 
             $query ="DELETE FROM pages WHERE page_id = $the_page_id ";
             $delete_query = mysqli_query($connection, $query);
