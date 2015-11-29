@@ -34,7 +34,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-
+              <li><a href='contact.php'>Contact</a></li>
               <?php
 
 
@@ -74,6 +74,7 @@
 
                }
               ?>
+
 
             </ul>
 
