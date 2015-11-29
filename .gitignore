@@ -1,3 +1,5 @@
 includes/db.php
 
 *.png
+
+*.sql
