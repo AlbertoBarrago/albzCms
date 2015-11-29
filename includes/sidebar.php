@@ -34,7 +34,9 @@
                   '</div>';
 
 
-        } else {
+        } }
+        
+        if($_SESSION['role'] == '') {
 
           echo '<div class="well">
                 <h4>Login</h4>
@@ -55,9 +57,7 @@
 
             </div>';
         }
-      }
-
-
+     
     ?>
 
 
