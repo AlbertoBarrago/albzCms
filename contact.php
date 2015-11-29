@@ -9,14 +9,19 @@
 
 <?php
 
-$message = "";
 
   if(isset($_POST['submit'])){
 
-      $to = $_POST['studio@albertobarrago.it'];
+      $to         = 'studio@albertobarrago.it';
       $subject    = $_POST['subject'];
-      $body = $_POST['body'];
+      $body       = $_POST['body'];
 
+      $body  = $msg;
+      $msg   = wordwrap($msg,70);
+
+      mail($to,$subject,$msg);
+
+      echo '<div class="alert alert-success" role="alert"> Messaggio inviato corretamente a ' . $to . '</div> ';
 
   }
 
@@ -33,7 +38,7 @@ $message = "";
                 <h1>Contact</h1>
 
                     <form role="form" action="registration.php" method="post" id="login-form" autocomplete="off">
-                      <h6 class="text-center"><?php echo $message; ?></h6>
+                    
                         <div class="form-group">
                             <label for="email" class="sr-only">Email</label>
                             <input type="email" name="email" id="email" class="form-control" placeholder="someusername@example.com">
