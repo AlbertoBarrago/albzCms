@@ -16,11 +16,12 @@
       $to         = 'studio@albertobarrago.it';
       $subject    = wordwrap($_POST['subject'],70);
       $body       = $_POST['body'];
+      $header    = $_POST['email'];
 
 
       if(!empty($subject) && !empty($body)){
 
-        mail($to,$subject,$body);
+        mail($to,$subject,$body, $header);
 
         echo '<div class="alert alert-success" role="alert"> Messaggio inviato corretamente a ' . $to . '</div> ';
 
@@ -37,6 +38,10 @@
 
 
     }
+
+
+
+?>
 
 
 ?>
