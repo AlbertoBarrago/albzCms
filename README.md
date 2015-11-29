@@ -5,8 +5,8 @@ _Work in progress_
 ###Resources
 
  - Bootstrap Framework
- - Mysqli
- - PHP 5.5 or higher
+ - MySQL
+ - PHP 5.5
  - Patience && Passion
 
 _Have a fun ^^_
@@ -19,4 +19,4 @@ alBz 🤑
 - Create database
 - Create rows (Post, User, Page...)
 
-DEMO :) -> [Demo Here](http://albertobarrago.it/cms_demo)
+DEMO :) -> [CMS V.Beta1 Here](http://albertobarrago.it/cms_demo)
