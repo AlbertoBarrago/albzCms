@@ -11,37 +11,28 @@
 
   if(isset($_POST['sendEmail'])){
 
-      $msg   = wordwrap($msg,70);
-
       $to         = 'studio@albertobarrago.it';
       $subject    = wordwrap($_POST['subject'],70);
       $body       = $_POST['body'];
-      $header    = $_POST['email'];
+      $header     = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
 
 
-      if(!empty($subject) && !empty($body)){
+      if(!empty($subject) && !empty($body) && $header !== false){
 
         mail($to,$subject,$body, $header);
 
         echo '<div class="alert alert-success" role="alert"> Messaggio inviato corretamente a ' . $to . '</div> ';
 
 
+    }  else {
 
 
-      }else {
+          echo '<div class="alert alert-danger" role="alert"> Compila i campi richiesti o verifica questo indirizzo '. $header .'</div>';
 
 
-        echo '<div class="alert alert-danger" role="alert"> Compila i campi richiesti '. session_id() .' </div> ';
-
-
+        }
       }
 
-
-    }
-
-
-
-?>
 
 
 ?>
