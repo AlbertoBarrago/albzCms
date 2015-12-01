@@ -166,7 +166,7 @@
     <select class="form-control" name="user_role">
       <option value='<?php echo $user_role; ?>'>Select a Role</option>
       <?php
-        if($user_role == 'Subscriber') {
+        if($user_role == 'subscriber') {
 
             echo "<option value='admin'>Admin</option>";
 

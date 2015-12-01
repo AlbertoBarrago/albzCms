@@ -174,12 +174,12 @@
                           <?php
                             if(!$user_role) {
 
-                                echo "<option value='Admin'>Admin</option>";
+                                echo "<option value='admin'>Admin</option>";
 
                             } else {
 
 
-                              echo "<option value='Guess'>Guess</option>";
+                              echo "<option value='subscriber'>Subscriber</option>";
 
                             }
 

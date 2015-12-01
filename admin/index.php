@@ -171,9 +171,9 @@
                     $unapproved_comments = mysqli_query($connection, $query);
                     $unapproved_comment = mysqli_num_rows($unapproved_comments);
 
-                    $query = "SELECT * FROM users WHERE user_role = 'guess' ";
-                    $select_all_guess = mysqli_query($connection, $query);
-                    $guess_unapproved = mysqli_num_rows($select_all_guess);
+                    $query = "SELECT * FROM users WHERE user_role = 'subscriber' ";
+                    $select_all_subscriber = mysqli_query($connection, $query);
+                    $subscriber_unapproved = mysqli_num_rows($select_all_subscriber);
                   ?>
 
                 <div class="row">
@@ -187,8 +187,8 @@
 
                             <?php
 
-                              $element_text = ['All Post', 'Action Post', 'Draft Posts', 'Comments', 'Pending Comments' , 'Total Users', 'Guess Users' , 'Categories'];
-                              $element_count = [$post_counts,$post_published_count,  $post_draft_count, $comment_counts, $unapproved_comment ,$user_counts, $guess_unapproved , $category_counts];
+                              $element_text = ['All Post', 'Action Post', 'Draft Posts', 'Comments', 'Pending Comments' , 'Total Users', 'Subscriber Users' , 'Categories'];
+                              $element_count = [$post_counts,$post_published_count,  $post_draft_count, $comment_counts, $unapproved_comment ,$user_counts, $subscriber_unapproved , $category_counts];
 
                               for($i = 0; $i < 8; $i++){
                                 echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
