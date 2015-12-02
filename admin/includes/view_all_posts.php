@@ -60,7 +60,7 @@ if(isset($_POST['checkBoxArray'])){
 ?>
 <form class="" action="" method="post">
 
-  <table class="table">
+  <table class="table table-striped table-bordered table-hover table-responsive">
 
     <div class="row">
 
