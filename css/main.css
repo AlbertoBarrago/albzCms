@@ -43,3 +43,14 @@
 .active_link {
   background: #000 !important;
 }
+
+@media (max-width: 320px) {
+	
+	#centraTesto{
+			
+			text-align: center;
+		
+	}
+	
+}
+

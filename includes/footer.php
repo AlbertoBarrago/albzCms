@@ -5,7 +5,7 @@
     <div class="row">
 	    
         <div class="col-md-6">
-            <p>Copyright &copy; alBz <?php echo date('Y'); ?></p>
+            <p id="centraTesto">Copyright &copy; alBz <?php echo date('Y'); ?></p>
         </div>
         
         <div class="col-md-6 hidden-xs text-center">

@@ -10,16 +10,30 @@
 <?php
 
   if(isset($_POST['sendEmail'])){
+	  
+	  
+	  if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+		  
+		  $validate = $_POST['email'];
+		  
+	  }
+	  
+	  $server = $_SERVER['HTTP_USER_AGENT'];
+	  $ip = $_SERVER['SERVER_ADDR'];
+	 
 
       $to         = 'studio@albertobarrago.it';
       $subject    = wordwrap($_POST['subject'],70);
       $body       = $_POST['body'];
-      $header     = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+	 $headers  = 'MIME-Version: 1.0' . "\r\n";
+	 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	 $headers .= 'From: alBz Blog ' . $validate . "\r\n";
+ 
 
 
-      if(!empty($subject) && !empty($body) && $header !== false){
+      if(!empty($subject) && !empty($body) && $headers ){
 
-        mail($to,$subject,$body, $header);
+        mail($to,$subject,$body, $headers);
 
         echo '<div class="alert alert-success" role="alert"> Messaggio inviato corretamente a ' . $to . '</div> ';
 
@@ -27,7 +41,7 @@
     }  else {
 
 
-          echo '<div class="alert alert-danger" role="alert"> Compila i campi richiesti o verifica questo indirizzo '. $header .'</div>';
+          echo '<div class="alert alert-danger" role="alert"> Compila i campi richiesti o verifica questo indirizzo '. $_POST['email'] .'</div>';
 
 
         }
