@@ -3,14 +3,15 @@
 <!-- Footer -->
 <footer>
     <div class="row">
-        <div class="col-lg-8">
+	    
+        <div class="col-md-6">
             <p>Copyright &copy; alBz <?php echo date('Y'); ?></p>
         </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
+        
+        <div class="col-md-6 hidden-xs text-center">
           <a href="javascript:void(0);" id="target"><i class="fa fa-arrow-up"></i> Back To Top</a>
         </div>
-        <!-- /.col-lg-4 -->
+  
     </div>
     <!-- /.row -->
 </footer>
