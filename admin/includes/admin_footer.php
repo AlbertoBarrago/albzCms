@@ -12,6 +12,25 @@
 
 </script>
 
+<script>
+	
+	$('document').ready(function(){
+		
+		$('.delete_modal').on('click', function(){
+			
+			var id = $(this).attr("rel");
+			var delete_url = "posts.php?delete="+ id +" ";
+			
+			$(".modal-delete_link").attr('href', delete_url);
+			
+			$('#myModal').modal('show');
+			
+		})
+		
+	})
+	
+</script>	
+
 </body>
 
 </html>
