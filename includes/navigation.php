@@ -21,8 +21,32 @@
                 while ($row = mysqli_fetch_assoc($select_all_pages_query)) {
                   $page_id = $row['page_id'];
                   $page_title = $row['page_title'];
+                  
+                  $category_class = ' ';
+                  $registration_class = ' ';
+                  $contact_class = ' ';
+                  
+                  $pageName = basename($_SERVER['PHP_SELF']); 
+                  
+                  $registration = 'registration.php';
+                  $contact = 'contact.php';
+                  
+                  if(isset($_GET['page_id']) && $_GET['page_id'] == $page_id ){
+	                  
+	                  	$category_class  = 'active';      	
+	                  
+                  } else if ($pageName == $registration ) {
+	                  
+	                  $registration_class = 'active';
+	                  
+                  } else if ($pageName == $contact) {
+	                  
+	                  $contact_class = 'active';
+	                  
+	                  
+                  }
 
-                  echo "<li><a href='page.php?page_id=$page_id'>{$page_title}</a></li>";
+                  echo "<li class='$category_class'><a href='page.php?page_id=$page_id'>{$page_title}</a></li>";
                 }
 
 
@@ -34,7 +58,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-              <li><a href='contact.php'>Contact</a></li>
+              <li class="<?php echo $contact_class; ?>"><a href='contact.php'>Contact</a></li>
               <?php
 
 
@@ -70,7 +94,7 @@
 
               <?php if ($_SESSION['role'] == NULL) {
 
-                echo "<li><a href='registration.php'>Registration</a></li>";
+                echo "<li class='$registration_class'><a href='registration.php'>Registration</a></li>";
 
                }
               ?>
