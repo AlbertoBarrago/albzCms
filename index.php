@@ -39,13 +39,33 @@
                   } else {
                     $page_1 = ($page * $per_page) - $per_page;
                   }
+				  	
+				  	
+				   if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin') {
+	    
+					   $post_query_count = "SELECT * FROM posts ";
+					    
+				    } else {
+					    
+					     $post_query_count = "SELECT * FROM posts WHERE post_status =  'published' ";
+					    
+				    }	
 
-
-                $post_query_count = "SELECT * FROM posts";
                 $find_count = mysqli_query($connection, $post_query_count);
                 $count = mysqli_num_rows($find_count);
+                
+                
+                
+                
+                if($count < 1 ) {
+	                
+	                echo "<img style='position:center; margin:0 auto; display:block;' src='http://2.bp.blogspot.com/-j4zs-NmvOfU/VZapfDZGYeI/AAAAAAAAdAo/PjXifqKWcz8/s1600/lol-meme.png'> " . "<h1 class='text-center'>No post in this moment, but you can come back and maybe you can find one.</h1>";
+	                } else { 
 
                 $count = ceil($count / $per_page);
+                
+                
+                
 
                 $query = "SELECT * FROM posts LIMIT $page_1, $per_page";
                 $select_all_posts_query = mysqli_query($connection,$query);
@@ -58,8 +78,6 @@
                   $post_image = $row['post_image'];
                   $post_content = substr($row['post_content'],0,100);
                   $post_status = $row['post_status'];
-
-                  if($post_status == 'published'){
 
                   ?>
 
@@ -86,7 +104,7 @@
 
                 <hr>
 
-              <?php }}?>
+              <?php } }?>
 
 
                 <!-- Pager -->
