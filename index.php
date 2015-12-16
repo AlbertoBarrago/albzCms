@@ -59,7 +59,7 @@
                 
                 if($count < 1 ) {
 	                
-	                echo "<img style='position:center; margin:0 auto; display:block;' src='http://2.bp.blogspot.com/-j4zs-NmvOfU/VZapfDZGYeI/AAAAAAAAdAo/PjXifqKWcz8/s1600/lol-meme.png'> " . "<h1 class='text-center'>No post in this moment, but you can come back and maybe you can find one.</h1>";
+	                echo "<img style='position:center; margin:0 auto; display:block;' src='http://2.bp.blogspot.com/-j4zs-NmvOfU/VZapfDZGYeI/AAAAAAAAdAo/PjXifqKWcz8/s1600/lol-meme.png'> " . "<h1 class='text-center'>No post in this moment, but you can come back and maybe you can will find one.</h1>";
 	                } else { 
 
                 $count = ceil($count / $per_page);
