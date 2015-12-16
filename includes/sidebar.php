@@ -26,17 +26,14 @@
           $username_session = $_SESSION['username'];
 
             echo  '<div class="well"><h3>Sei loggato come, ' . $username_session . '</h3>' .
-                    '<hr/> <h5>Links</h5>
-                     <ul class="list-unstyled">
-                       <li> <a href="admin">Admin Panel</a> </li>
-                       <li> <a href="includes/logout.php">Log Out</a> </li>
-                    </ul>' .
+                    '<hr/> 
+                      <a href="includes/logout.php" class="btn btn-danger">Log Out</a>' .
                   '</div>';
 
 
         } }
         
-        if($_SESSION['role'] == '') {
+        if($_SESSION['role'] == ' ') {
 
           echo '<div class="well">
                 <h4>Login</h4>
