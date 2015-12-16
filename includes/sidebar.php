@@ -33,7 +33,7 @@
 
         } }
         
-        if($_SESSION['role'] == ' ') {
+        if(!$_SESSION['role']) {
 
           echo '<div class="well">
                 <h4>Login</h4>
